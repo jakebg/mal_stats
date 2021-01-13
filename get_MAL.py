@@ -11,24 +11,23 @@ def create_url(anime_num):
 
 def get_title(url):
     full_url = url + '/'
-
+    print(full_url)
     response = requests.get(full_url)
-    print(response.status_code)
-
-    print(type(response.json()))
     data = response.json()
+
     print(data['title'])
+    return data['title']
 
 def get_stats(url):
     full_url = url + '/stats'
 
     response = requests.get(full_url)
-    print(response.status_code)
-
-    print(type(response.json()))
     data = response.json()
 
     print('Completed: ', data['completed'])
     print('On hold: ', data['on_hold'])
     print('Plan to watch: ', data['plan_to_watch'])
     print('Dropped ', data['dropped'])
+
+    stats = [data['completed'],data['on_hold'],data['plan_to_watch'],data['dropped']]
+    return stats
