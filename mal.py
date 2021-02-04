@@ -26,6 +26,7 @@ if __name__ == '__main__':
 
         # main('5114')
         # main('9253')
-    create_bar_plot()
+    #create_bar_plot()
+    bar_chart_percent()
     plt.show()
 
