@@ -29,5 +29,9 @@ def get_stats(url):
     print('Plan to watch: ', data['plan_to_watch'])
     print('Dropped ', data['dropped'])
 
+    total = data['completed'] + data['on_hold'] + data['plan_to_watch'] + data['dropped']
+    
+    print('\nTotal: ', total, '\n')
+
     stats = [data['completed'],data['on_hold'],data['plan_to_watch'],data['dropped']]
-    return stats
+    return stats, total
