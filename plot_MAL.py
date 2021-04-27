@@ -48,8 +48,10 @@ def bar_chart_percent():
 
     prop_complete = np.true_divide(completed,totals) * 100
     prop_hold     = np.true_divide(on_hold,totals) * 100
-    prop_ptw     = np.true_divide(plan_to_watch,totals) * 100
+    prop_ptw      = np.true_divide(plan_to_watch,totals) * 100
     prop_drop     = np.true_divide(dropped,totals) * 100
+
+    print(prop_complete)
 
     ind = [x for x, _ in enumerate(show)]
 

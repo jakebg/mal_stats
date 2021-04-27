@@ -1,5 +1,6 @@
 from get_MAL import *
 from plot_MAL import *
+from get_anime_values import *
 # Fullmetal Alchemist: Brotherhood
 # Shingeki no Kyojin: The Final Season
 # Steins;Gate
@@ -21,12 +22,14 @@ def main(number):
     # create_bar_plot()
 
 if __name__ == '__main__':
+    
     #for x in anime_nums:
     #    main(x)
 
         # main('5114')
         # main('9253')
     #create_bar_plot()
-    bar_chart_percent()
-    plt.show()
-
+    #bar_chart_percent()
+    #plt.show()
+    # get_top_anime()
+    pass
