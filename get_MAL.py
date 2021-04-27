@@ -16,8 +16,8 @@ def get_title(url):
     response = requests.get(full_url)
     data = response.json()
 
-    print(data['title'])
-    return data['title']
+    print(data['title'],data['mal_id'])
+    return data['title'], data['mal_id']
 
 def get_stats(url):
     full_url = url + '/stats'
@@ -25,17 +25,20 @@ def get_stats(url):
     response = requests.get(full_url)
     data = response.json()
 
+    print('Watching: ', data['watching'])
     print('Completed: ', data['completed'])
     print('On hold: ', data['on_hold'])
     print('Plan to watch: ', data['plan_to_watch'])
     print('Dropped ', data['dropped'])
 
-    total = data['completed'] + data['on_hold'] + data['plan_to_watch'] + data['dropped']
+    #total = data['watching'] + data['completed'] + data['on_hold'] + data['plan_to_watch'] + data['dropped']
     
-    print('\nTotal: ', total, '\n')
+    #print('\nTotal: ', total, '\n')
 
-    stats = [data['completed'],data['on_hold'],data['plan_to_watch'],data['dropped']]
-    return stats, total
+    stats = [data['watching'],data['completed'],data['on_hold'],data['plan_to_watch'],data['dropped']]
+    
+    
+    return stats
 
 # Retrieves top anime numbers from myanimelist.com according to members
 def get_top_anime():
