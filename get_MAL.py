@@ -25,11 +25,11 @@ def get_stats(url):
     response = requests.get(full_url)
     data = response.json()
 
-    print('Watching: ', data['watching'])
-    print('Completed: ', data['completed'])
-    print('On hold: ', data['on_hold'])
-    print('Plan to watch: ', data['plan_to_watch'])
-    print('Dropped ', data['dropped'])
+    # print('Watching: ', data['watching'])
+    # print('Completed: ', data['completed'])
+    # print('On hold: ', data['on_hold'])
+    # print('Plan to watch: ', data['plan_to_watch'])
+    # print('Dropped ', data['dropped'])
 
     #total = data['watching'] + data['completed'] + data['on_hold'] + data['plan_to_watch'] + data['dropped']
     
@@ -46,8 +46,9 @@ def get_top_anime():
     # full_url = 'https://api.jikan.moe/v3/top/anime/1/tv'
     # response = requests.get(full_url)
     # data = response.json()
-    for i in range(10):
+    for i in range(1,11):
         full_url = f'https://api.jikan.moe/v3/top/anime/{i}/tv'
+        print(full_url)
         response = requests.get(full_url)
         data = response.json()
         time.sleep(5)

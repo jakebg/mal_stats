@@ -35,34 +35,44 @@ def main(number):
     # create_bar_plot()
 
 if __name__ == '__main__':
-    # create_mal_csv()
+    #get_top_anime()
+    #create_mal_csv()
+    
+    
     # top_500 = get_anime_values()
-    # top_3 = ['5114','38524','9253']
-    # for x in top_3:
+    # #top_3 = ['5114','38524']
+    # for idx, x in enumerate(top_500):
+    #     print(idx, ': ')
     #     main(x)
     #     time.sleep(4)
 
     df = pd.read_csv('mal_stats.csv')
 
     #print(df.mal_id,df.name)
-    print(df.head)
-    print('\n')
-    sum_column = df["watching"]+df["completed"]+df["on_hold"]+df["dropped"]+df["plan_to_watch"]
+    # print(df.head)
+    # print('\n')
+    # sum_column = df["watching"]+df["completed"]+df["on_hold"]+df["dropped"]+df["plan_to_watch"]
 
-    print(sum_column)
-    print('\n')
-    col_list = list(df)
-    col_list.remove('mal_id')
-    col_list.remove('name')
-    #print(col_list)
-    #print(df[col_list].iloc[:].sum(axis=1))
-   # print(df[col_list])
-    print(df[col_list].apply(lambda x: (x/x.sum())*100,axis=1))
-    #print(res.reset_index())
+    
+    #print(df.iloc[:2], df.iloc[:, 2:].apply(lambda x: (x/x.sum())*100,axis=1))
 
+    #df_percents =  df.iloc[:, 0:2], df.iloc[:, 2:].apply(lambda x: (x/x.sum())*100,axis=1)
+    df_names =  df.iloc[:, 0:2]
+    df_percents = df.iloc[:, 2:].apply(lambda x: (x/x.sum())*100,axis=1)
+    df_totals = df.iloc[:, 2:].apply(lambda x:x.sum(),axis=1)
+    print(df_totals)
+    frames = [df_names,df_percents,df_totals]
+    df_combined = pd.concat(frames,axis=1,join="inner")
+
+    columns = ['watching','completed','on_hold','dropped','plan_to_watch']
+
+    df_combined[columns] = df_combined[columns].round(2)
+    
+    df_combined.rename({0: 'totals'}, axis=1,inplace=True)
+    print(df_combined)
+    df_combined.to_csv('percents.csv')
 
     #create_bar_plot()
     #bar_chart_percent()
     #plt.show()
-    # get_top_anime()
-    pass
+    
