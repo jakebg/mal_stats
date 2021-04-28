@@ -67,10 +67,10 @@ if __name__ == '__main__':
     columns = ['watching','completed','on_hold','dropped','plan_to_watch']
 
     df_combined[columns] = df_combined[columns].round(2)
-    
+
     df_combined.rename({0: 'totals'}, axis=1,inplace=True)
     print(df_combined)
-    df_combined.to_csv('percents.csv')
+    df_combined.to_json('percents.json',orient="table")
 
     #create_bar_plot()
     #bar_chart_percent()

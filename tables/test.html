@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.24/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.24/js/jquery.dataTables.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#table_id').DataTable({
+                "ajax": "percents.json",
+                "columns": [{
+                    "data": "mal_id"
+                }, {
+                    "data": "name"
+                }, {
+                    "data": "watching"
+                }, {
+                    "data": "completed"
+                }, {
+                    "data": "on_hold"
+                }, {
+                    "data": "dropped"
+                }, {
+                    "data": "plan_to_watch"
+                }, {
+                    "data": "totals"
+                }]
+            });
+        });
+    </script>
+</head>
+
+<body>
+
+    <table id="table_id" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>mal_id</th>
+                <th>name</th>
+                <th>watching</th>
+                <th>completed</th>
+                <th>on_hold</th>
+                <th>dropped</th>
+                <th>plan_to_watch</th>
+                <th>totals</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th>mal_id</th>
+                <th>name</th>
+                <th>watching</th>
+                <th>completed</th>
+                <th>on_hold</th>
+                <th>dropped</th>
+                <th>plan_to_watch</th>
+                <th>totals</th>
+            </tr>
+        </tfoot>
+    </table>
+</body>
+
+
+</html>
