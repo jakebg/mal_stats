@@ -1,6 +1,6 @@
 # myanimelist stats viewer
 
-myanimelist unofficial api: 
+myanimelist unofficial api:
   (https://jikan.docs.apiary.io/#introduction/information)
 myanimelist: 
   (https://myanimelist.net/topanime.php)
