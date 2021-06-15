@@ -1,11 +1,11 @@
-myanimelist stats viewer
+# myanimelist stats viewer
 
 myanimelist unofficial api: 
-  https://jikan.docs.apiary.io/#introduction/information
+  (https://jikan.docs.apiary.io/#introduction/information)
 myanimelist: 
-  https://myanimelist.net/topanime.php
+  (https://myanimelist.net/topanime.php)
 DataTables: 
-  https://datatables.net/ - 
+  (https://datatables.net/) - 
     DataTables is a plug-in for the jQuery Javascript library
 
 Initially retrieves data from the jikan unofficial myanimelist api for most popular anime. 
