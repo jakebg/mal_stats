@@ -12,4 +12,4 @@ Initially retrieves data from the jikan unofficial myanimelist api for most popu
 Displays percentage of total viewers that are watching, are on_hold, have dropped, or plan_to_watch a given anime out of the top 500 biggest fanbases on myanimelist.net
 
 
-* DEMO: http://www.jakegargiulo.com/anime
+* DEMO: (http://www.jakegargiulo.com/anime)
